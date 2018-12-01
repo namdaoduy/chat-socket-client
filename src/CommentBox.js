@@ -5,7 +5,8 @@ import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import './CommentBox.css';
 
-const server_socket = 'https://api.namdaoduy.tk/chat-socket/';
+const server_socket = 'https://chat.namdaoduy.tk/';
+// const server_socket = 'http://127.0.0.1:3006';
 
 class CommentBox extends Component {
   constructor() {
@@ -114,7 +115,7 @@ class CommentBox extends Component {
     this.socket = io(server_socket);
     this.listener();
     this.scrollToBottom();
-    setTimeout(this.openning, 1000);
+    this.openning();
   }
 
   componentDidMount = () => {
