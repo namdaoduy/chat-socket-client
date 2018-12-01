@@ -30,9 +30,13 @@ html , body {
 }
 
 .singleComment {
-  padding: 10px 20px;
+  padding: 10px 5px;
   margin-bottom: 10px;
   display: flex;
+}
+
+.singleComment.owner {
+  flex-direction: row-reverse;
 }
 
 .singleCommentContent {
@@ -47,6 +51,7 @@ html , body {
   height: 35px;
   width: 35px;
   margin-right: 10px;
+  margin-left: 10px;
   border-radius: 50%;
   background-color: #ccc;
 }
@@ -125,4 +130,13 @@ html , body {
   cursor: pointer;
   color: #e4a215;
   font-size: 28px;
+}
+
+.form span {
+  padding-right: 10px;
+  padding-left: 5px;
+  font-size: 15px;
+  color: #385997;
+  height: fit-content;
+  margin: auto;
 }

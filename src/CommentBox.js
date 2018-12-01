@@ -15,7 +15,7 @@ class CommentBox extends Component {
       data: [],
       error: null,
       text: '',
-      user_id: (Math.random() * 100) + 1,
+      user_id: 0,
       username: 'Anonymous',
     };
     this.socket = null;
@@ -49,6 +49,7 @@ class CommentBox extends Component {
         const data = [...this.state.data, ...obj.old_messages]
         this.setState({
           username: obj.username,
+          user_id: obj.uid,
           data: data
         })
       }
@@ -77,6 +78,7 @@ class CommentBox extends Component {
   signup = () => {
     const username = prompt('Username');
     const password = prompt('Password');
+    if (username == '' && password == '') return;
     this.socket.emit('signup', {
       username: username,
       password: password
@@ -92,15 +94,15 @@ class CommentBox extends Component {
   submitComment = (e) => {
     e.preventDefault();
     const { username, text } = this.state;
-    const date = Date.now();
+    const date = new Date();
     if (!username || !text) return;
     this.socket.emit('message', {
       id: date.toString(),
-      user_id: this.state.user_id,
+      uid: this.state.user_id,
       username: this.state.username,
       text: this.state.text,
-      createAt: date,
-      updateAt: date
+      createdAt: date,
+      updatedAt: date
     })
     this.setState({ text: '', error: null });
   }
@@ -112,8 +114,8 @@ class CommentBox extends Component {
   start = () => {
     this.socket = io(server_socket);
     this.listener();
-    this.openning();
     this.scrollToBottom();
+    setTimeout(this.openning, 1000);
   }
 
   componentDidMount = () => {
@@ -129,6 +131,7 @@ class CommentBox extends Component {
       <div className="container">
         <div className="comments">
           <CommentList
+            myid={this.state.user_id}
             data={this.state.data}
           />
         <div style={{ float:"left", clear: "both" }}

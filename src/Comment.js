@@ -5,8 +5,9 @@ import PropTypes from 'prop-types';
 import ReactMarkdown from 'react-markdown';
 
 const Comment = props => (
-  <div className="singleComment">
-    <img alt="user_image" className="userImage" src={`https://picsum.photos/70?random=${props.id}`} />
+  <div className={"singleComment" + (props.uid == props.myid ? " owner" : "")}>
+    <img alt="user_image" className="userImage" 
+      src={`https://picsum.photos/70?image=${props.uid}`} />
     <div className="textContent">
       <div className="singleCommentContent">
         <h3>{props.username}</h3>

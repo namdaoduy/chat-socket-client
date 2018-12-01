@@ -8,6 +8,8 @@ const CommentList = (props) => {
       username={comment.username} 
       key={comment._id} 
       id={comment._id}
+      uid={comment.uid}
+      myid={props.myid}
       timestamp={comment.updatedAt}>
       { comment.text}
     </Comment>
@@ -22,6 +24,8 @@ const CommentList = (props) => {
 CommentList.propTypes = {
   data: PropTypes.arrayOf(PropTypes.shape({
     username: PropTypes.string,
+    uid: PropTypes.number,
+    myid: PropTypes.number,
     id: PropTypes.string,
     text: PropTypes.string,
     updatedAt: PropTypes.string,

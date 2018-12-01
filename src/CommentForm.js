@@ -11,7 +11,7 @@ const CommentForm = props => (
       value={props.username}
       onChange={props.handleChangeText}
     /> */}
-    <span>{props.username}</span>
+    <span className="username">{props.username}</span>
     <input
       type="text"
       name="text"
