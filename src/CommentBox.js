@@ -5,8 +5,7 @@ import CommentList from './CommentList';
 import CommentForm from './CommentForm';
 import './CommentBox.css';
 
-const server_api = 'http://127.0.0.1:3001';
-const server_socket = 'http://127.0.0.1:3002';
+const server_socket = 'https://api.namdaoduy.tk/chat-socket/';
 
 class CommentBox extends Component {
   constructor() {
