@@ -1,0 +1,128 @@
+*:focus {
+  outline: none;
+}
+
+html , body {
+  height: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+#root {
+  height: 100%;
+}
+
+.container {
+  height: 100%;
+  background-color: #f1f1f1;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+}
+
+.comments {
+  overflow: auto;
+  width: 100%;
+  max-width: 700px;
+}
+
+.singleComment {
+  padding: 10px 20px;
+  margin-bottom: 10px;
+  display: flex;
+}
+
+.singleCommentContent {
+  min-width: 100px;
+  background-color: #fff;
+  border-radius: 25px;
+  padding: 10px;
+  display: inline-flex;
+}
+
+.userImage {
+  height: 35px;
+  width: 35px;
+  margin-right: 10px;
+  border-radius: 50%;
+  background-color: #ccc;
+}
+
+
+.singleCommentContent h3 {
+  margin: 0;
+  padding-right: 5px;
+  font-size: 12px;
+  color: #385997;
+}
+
+.singleCommentContent p {
+  font-size: 12px;
+  margin: 0;
+}
+
+.singleCommentButtons {
+  padding-top: 5px;
+}
+
+.time {
+  font-size: 10px;
+  padding-left: 5px;
+  padding-right: 5px;
+  color: #999;
+}
+
+.singleCommentButtons a {
+  margin: 0px 3px;;
+  padding-top: 10px;
+  cursor: pointer;
+  font-size: 10px;
+  color: #385997;
+  letter-spacing: 0.05em;
+}
+
+.form {
+  width: 100%;
+  max-width: 700px;
+}
+
+.form div {
+  display: flex;
+  padding: 15px 0;
+}
+
+.form input {
+  height: 30px;
+  padding-left: 10px;
+  border: 1px solid #c1c1c1;
+  margin-right: 10px;
+  border-radius: 20px;
+  flex: 3;
+}
+
+.form input:first-child {
+  flex: 1;
+}
+
+.form button {
+  color: #24a5eb;
+  font-size: 25px;
+  border: none;
+  padding: 0;
+  width: 40px;
+  background-color: transparent;
+  transition: color 0.5s, font-size 0.5s;
+}
+
+.form button i {
+  font-size: inherit;
+}
+
+.form button:hover {
+  cursor: pointer;
+  color: #e4a215;
+  font-size: 28px;
+}
